@@ -28,6 +28,11 @@ const nextConfig: NextConfig = {
         destination: "https://instagram.com/nico_forge",
         permanent: true,
       },
+      {
+        source: "/tiktok",
+        destination: "https://www.tiktok.com/@nico_forge",
+        permanent: true,
+      },
     ];
   },
 };
