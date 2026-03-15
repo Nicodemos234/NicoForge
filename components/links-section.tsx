@@ -5,7 +5,7 @@ import { Twitch, Youtube, Github, Instagram } from "lucide-react"
 const links = [
   {
     name: "TWITCH",
-    url: "https://twitch.tv/forjadonico",
+    url: "/twitch",
     icon: Twitch,
     description: "LIVES DE CODING",
     color: "#9146ff",
@@ -13,7 +13,7 @@ const links = [
   },
   {
     name: "YOUTUBE",
-    url: "https://youtube.com/@forjadonico",
+    url: "/youtube",
     icon: Youtube,
     description: "TUTORIAIS",
     color: "#ff0000",
@@ -21,7 +21,7 @@ const links = [
   },
   {
     name: "GITHUB",
-    url: "https://github.com/forjadonico",
+    url: "/github",
     icon: Github,
     description: "OPEN SOURCE",
     color: "#00ff88",
@@ -29,7 +29,7 @@ const links = [
   },
   {
     name: "INSTAGRAM",
-    url: "https://instagram.com/forjadonico",
+    url: "/instagram",
     icon: Instagram,
     description: "BASTIDORES",
     color: "#ff00ff",
