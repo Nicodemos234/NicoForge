@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 export function HeroSection() {
   const [showCursor, setShowCursor] = useState(true);
   const [typedText, setTypedText] = useState("");
-  const fullText = "DEV & CRIADOR";
+  const fullText = "DEV & MAKER";
 
   useEffect(() => {
     const cursorInterval = setInterval(() => {
@@ -84,8 +84,8 @@ export function HeroSection() {
 
         {/* Description */}
         <p className="font-[family-name:var(--font-retro)] text-2xl md:text-3xl text-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          Transformando ideias em realidade atraves de codigo, hardware e
-          criatividade. Do terminal a bancada, da impressora 3D ao streaming.
+          Desenvolvedor fullstack & Maker. Unindo o mundo digital e o físico
+          através de código e impressão 3D."
         </p>
 
         {/* CTA Button - Arcade style */}
