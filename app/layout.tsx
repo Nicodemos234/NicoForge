@@ -1,21 +1,23 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Press_Start_2P, VT323 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ 
+const pressStart = Press_Start_2P({ 
+  weight: "400",
   subsets: ["latin"],
-  variable: '--font-sans'
+  variable: '--font-pixel'
 });
 
-const jetbrainsMono = JetBrains_Mono({ 
+const vt323 = VT323({ 
+  weight: "400",
   subsets: ["latin"],
-  variable: '--font-mono'
+  variable: '--font-retro'
 });
 
 export const metadata: Metadata = {
-  title: 'ForjaDoNico | Dev & Criadora de Conteúdo',
-  description: 'Portfólio pessoal de ForjaDoNico - Desenvolvedora e criadora de conteúdo. Projetos de hardware, software e muito mais.',
+  title: 'ForjaDoNico | PLAYER 1 READY',
+  description: 'Portfólio pessoal de ForjaDoNico - Desenvolvedora e criadora de conteudo. INSERT COIN TO START.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -43,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+      <body className={`${pressStart.variable} ${vt323.variable} font-retro`}>
         {children}
         <Analytics />
       </body>
