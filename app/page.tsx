@@ -6,7 +6,10 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background relative overflow-hidden">
+      {/* Global scanlines overlay */}
+      <div className="fixed inset-0 pointer-events-none z-50 opacity-30 scanlines" />
+      
       <HeroSection />
       <LinksSection />
       <ProjectsSection />

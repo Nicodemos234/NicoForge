@@ -1,18 +1,16 @@
 "use client"
 
-import { cn } from "@/lib/utils"
-
 const technologies = [
-  { name: "TypeScript", color: "text-blue-400" },
-  { name: "JavaScript", color: "text-yellow-400" },
-  { name: "React", color: "text-cyan-400" },
-  { name: "Node.js", color: "text-green-400" },
-  { name: "Debian", color: "text-red-400" },
-  { name: "LazyVim", color: "text-green-500" },
-  { name: "tmux", color: "text-emerald-400" },
-  { name: "Docker", color: "text-blue-500" },
-  { name: "Git", color: "text-orange-400" },
-  { name: "Linux", color: "text-amber-400" },
+  { name: "TYPESCRIPT", color: "#00ffff" },
+  { name: "JAVASCRIPT", color: "#ffff00" },
+  { name: "REACT", color: "#00ffff" },
+  { name: "NODE.JS", color: "#00ff88" },
+  { name: "DEBIAN", color: "#ff3366" },
+  { name: "LAZYVIM", color: "#00ff88" },
+  { name: "TMUX", color: "#00ff88" },
+  { name: "DOCKER", color: "#00ffff" },
+  { name: "GIT", color: "#ff00ff" },
+  { name: "LINUX", color: "#ffff00" },
 ]
 
 // Duplicate for infinite scroll effect
@@ -20,32 +18,39 @@ const duplicatedTech = [...technologies, ...technologies]
 
 export function TechStackSection() {
   return (
-    <section className="py-20 px-4 bg-secondary/30 overflow-hidden">
+    <section className="py-20 px-4 bg-secondary/50 overflow-hidden relative">
+      {/* Decorative corners */}
+      <div className="absolute top-4 left-4 w-8 h-8 border-t-4 border-l-4 border-[#ff00ff]" />
+      <div className="absolute top-4 right-4 w-8 h-8 border-t-4 border-r-4 border-[#ff00ff]" />
+      <div className="absolute bottom-4 left-4 w-8 h-8 border-b-4 border-l-4 border-[#ff00ff]" />
+      <div className="absolute bottom-4 right-4 w-8 h-8 border-b-4 border-r-4 border-[#ff00ff]" />
+      
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
-          Tech Stack
-        </h2>
-        <p className="text-muted-foreground text-center mb-12 text-lg">
-          Ferramentas e tecnologias do dia a dia
-        </p>
+        <div className="text-center mb-12">
+          <h2 className="font-[family-name:var(--font-pixel)] text-xl md:text-2xl text-[#ffff00] mb-4">
+            POWER-UPS
+          </h2>
+          <p className="font-[family-name:var(--font-retro)] text-2xl text-muted-foreground">
+            FERRAMENTAS E TECNOLOGIAS DO DIA A DIA
+          </p>
+        </div>
         
-        {/* Infinite marquee */}
-        <div className="relative">
+        {/* Infinite marquee - Desktop */}
+        <div className="relative hidden md:block">
           {/* Gradient overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-secondary/30 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-secondary/30 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-secondary/50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-secondary/50 to-transparent z-10 pointer-events-none" />
           
           <div className="flex animate-marquee">
             {duplicatedTech.map((tech, index) => (
               <div
                 key={`${tech.name}-${index}`}
-                className="flex-shrink-0 mx-4 px-6 py-4 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors group"
+                className="flex-shrink-0 mx-3 px-6 py-4 border-4 border-border bg-card hover:border-current transition-all duration-200 hover-glitch group"
               >
-                <span className={cn(
-                  "font-mono text-lg font-medium transition-colors",
-                  "text-muted-foreground group-hover:text-foreground",
-                  tech.color && `group-hover:${tech.color}`
-                )}>
+                <span 
+                  className="font-[family-name:var(--font-pixel)] text-xs transition-colors"
+                  style={{ color: tech.color }}
+                >
                   {tech.name}
                 </span>
               </div>
@@ -54,17 +59,36 @@ export function TechStackSection() {
         </div>
 
         {/* Static grid for mobile */}
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:hidden">
+        <div className="grid grid-cols-2 gap-3 md:hidden">
           {technologies.map((tech) => (
             <div
               key={tech.name}
-              className="px-4 py-3 rounded-lg border border-border bg-card text-center hover:border-primary/50 transition-colors"
+              className="px-4 py-3 border-4 border-border bg-card text-center hover:border-current transition-colors"
             >
-              <span className="font-mono text-sm text-muted-foreground">
+              <span 
+                className="font-[family-name:var(--font-pixel)] text-[8px]"
+                style={{ color: tech.color }}
+              >
                 {tech.name}
               </span>
             </div>
           ))}
+        </div>
+        
+        {/* Stats display */}
+        <div className="mt-12 flex justify-center gap-8 font-[family-name:var(--font-pixel)] text-[10px]">
+          <div className="text-center">
+            <div className="text-[#00ff88] text-lg mb-1">10+</div>
+            <div className="text-muted-foreground">SKILLS</div>
+          </div>
+          <div className="text-center">
+            <div className="text-[#00ffff] text-lg mb-1">999</div>
+            <div className="text-muted-foreground">COMMITS</div>
+          </div>
+          <div className="text-center">
+            <div className="text-[#ff00ff] text-lg mb-1">24/7</div>
+            <div className="text-muted-foreground">CODING</div>
+          </div>
         </div>
       </div>
     </section>
